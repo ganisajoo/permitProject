@@ -5,7 +5,12 @@
 <!-- Main content -->
 <section class="content">
   <div class="container-fluid">
-    <div class="card">        
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header">
+            <button type="button" class="btn btn-primary btn-lg" href="">Request Permit</button>
+          </div>            
       
       <!-- /.card-header -->
       <div class="card-body">

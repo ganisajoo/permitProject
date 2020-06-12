@@ -6,11 +6,173 @@
 <!-- Main content -->
 <section class="content">
   <div class="container-fluid">
-    <div class="card">        
-      
+    <div class="row">
+      <div class="col-12">
+        <div class="card card-light">
+          <div class="card-header">
+            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" 
+              data-target="#kartuModal">Request Kartu</button>
+          </div> 
+          
+          <div class="modal fade" id="kartuModal">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+              <div class="modal-content">
+          
+                <!-- Modal Header -->
+                <div class="modal-header">
+                   <h4 class="modal-title">Form Peminjaman Kartu Akses</h4>                  
+                  </div>
+          
+                <!-- Modal body -->
+                <div class="modal-body">
+                  <div class="form-row">
+                    <div class="form-group col">
+                      <label for="inputNama">Nama</label>
+                      <input type="text" class="form-control" id="inputName" placeholder="Nama">
+                    </div>
+                    <div class="form-group col">
+                      <label for="inputNik">NIK</label>
+                      <input type="text" class="form-control" id="inputNik" placeholder="NIK">
+                    </div>
+                  </div>
+                  <div class="form-row">
+                  <div class="form-group col">
+                    <label for="nomorTelp">Nomor Telp.</label>
+                    <input type="text" class="form-control" id="nomorTelpon" placeholder="Nomor Telephone">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputAddress2">Divisi</label>
+                    <input type="text" class="form-control" id="namaDivisi" placeholder="Divisi">
+                  </div>
+                  </div>                  
+                  <div class="form-row">
+                    <div class="form-group col-md-2">
+                      <label for="inputNoKartu">Nomor Kartu</label>
+                      <input type="text" class="form-control" id="inputNoKartu">
+                    </div>
+                        <div class="form-goup col-md-4">
+                          <label for="waktuPeminjaman">Waktu Peminjaman</label>
+                          <div class="input-group date" id="datetimepicker6" data-target-input="nearest">
+                            <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker6"/>
+                            <div class="input-group-append" data-target="#datetimepicker6" data-toggle="datetimepicker">
+                                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                        </div>                    
+                        </div>
+                      </div>          
+          
+                    <div class="form-group col">
+                      <label for="inputState">Ruang</label>
+                      <input type="text" id="inputRuang" class="form-control" placeholder="Ruang yang ingin dimasuki">                  
+                    </div>
+                    
+                  </div>
+                  <p class="font-weight-bold">Ruang yang ingin dimasuki</p>
+                  <div class="form-row">
+                    <div class="form-group col-sm-3">                    
+                    <div class="form-check">                    
+                      <input class="form-check-input" type="checkbox" id="gridCheck">
+                      <label class="form-check-label" for="gridCheck">
+                        Server Room
+                      </label>
+                    </div>
+                    </div>
+                    <div class="form-group col-sm-3">
+                    <div class="form-check">                    
+                      <input class="form-check-input" type="checkbox" id="gridCheck">
+                      <label class="form-check-label" for="gridCheck">
+                        MMR 1
+                      </label>
+                    </div>
+                    </div>
+                    <div class="form-group col-sm-3">
+                    <div class="form-check">                    
+                      <input class="form-check-input" type="checkbox" id="gridCheck">
+                      <label class="form-check-label" for="gridCheck">
+                        MMR 2
+                      </label>
+                    </div>
+                    </div>
+                    <div class="form-group col-sm-3">
+                    <div class="form-check">                    
+                      <input class="form-check-input" type="checkbox" id="gridCheck">
+                      <label class="form-check-label" for="gridCheck">
+                        UPS Room
+                      </label>
+                    </div>
+                    </div>
+                  </div> 
+                  <div class="form-row">
+                    <div class="form-group col-sm-3">                    
+                    <div class="form-check">                    
+                      <input class="form-check-input" type="checkbox" id="gridCheck">
+                      <label class="form-check-label" for="gridCheck">
+                        Generator Room
+                      </label>
+                    </div>
+                    </div>
+                    <div class="form-group col-sm-3">
+                    <div class="form-check">                    
+                      <input class="form-check-input" type="checkbox" id="gridCheck">
+                      <label class="form-check-label" for="gridCheck">
+                        Panel Room
+                      </label>
+                    </div>
+                    </div>
+                    <div class="form-group col-sm-3">
+                    <div class="form-check">                    
+                      <input class="form-check-input" type="checkbox" id="gridCheck">
+                      <label class="form-check-label" for="gridCheck">
+                        Battery Room
+                      </label>
+                    </div>
+                    </div>
+                    <div class="form-group col-sm-3">
+                    <div class="form-check">                    
+                      <input class="form-check-input" type="checkbox" id="gridCheck">
+                      <label class="form-check-label" for="gridCheck">
+                        FSS Room
+                      </label>
+                    </div>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-sm-3">                    
+                    <div class="form-check">                    
+                      <input class="form-check-input" type="checkbox" id="gridCheck">
+                      <label class="form-check-label" for="gridCheck">
+                        Trafo Room
+                      </label>
+                    </div>
+                    </div>
+                    <div class="form-group col-sm-3">                    
+                      <div class="form-check">                    
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">
+                          Office 2nd Floor
+                        </label>
+                      </div>
+                      </div>
+                      <div class="form-group col-sm-3">                    
+                        <div class="form-check">                    
+                          <input class="form-check-input" type="checkbox" id="gridCheck">
+                          <label class="form-check-label" for="gridCheck">
+                            Office 3rd Floor
+                          </label>
+                        </div>
+                        </div>
+                  </div> 
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+              </div>          
+            </div>
+          </div>
       <!-- /.card-header -->
       <div class="card-body">
-        <table id="example1" class="table table-bordered table-striped">
+       <table id="example2" class="table table-bordered table-striped">        
           <thead>
             <tr>
                     <th>Rendering engine</th>

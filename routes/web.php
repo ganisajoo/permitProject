@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('admin/tabelPermit');
+    return view('/formPermit');
 });
 
 Route::get('/tabelUser', 'userController@index' );

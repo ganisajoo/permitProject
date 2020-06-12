@@ -13,7 +13,22 @@
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- DataTables -->
   <link rel="stylesheet" href="{{asset("lte/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css")}}">
+  <link rel="stylesheet" href="{{asset("lte/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css")}}">
+ 
   <link rel="stylesheet" href="{{asset("lte/plugins/datatables-responsive/css/responsive.bootstrap4.min.css")}}">
+  <link rel="stylesheet" href="{{asset("lte/plugins/daterangepicker/daterangepicker.css")}}">
+  <!-- iCheck for checkboxes and radio inputs -->
+  <link rel="stylesheet" href="{{asset("lte/plugins/icheck-bootstrap/icheck-bootstrap.min.css")}}">
+  <!-- Bootstrap Color Picker -->
+  <link rel="stylesheet" href="{{asset("lte/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css")}}">
+  <!-- Tempusdominus Bbootstrap 4 -->
+  <link rel="stylesheet" href="{{asset("lte/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css")}}">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="{{asset("lte/plugins/select2/css/select2.min.css")}}">
+  <link rel="stylesheet" href="{{asset("lte/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css")}}">
+  <!-- Bootstrap4 Duallistbox -->
+  <link rel="stylesheet" href="{{asset("lte/plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css")}}">
+  
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset("lte/dist/css/adminlte.min.css")}}">
   <!-- Google Font: Source Sans Pro -->
@@ -154,7 +169,7 @@
       <!-- Sidebar user (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">        
         <div class="info">
-          <a href="" class="d-block">Administrator</a>
+          <a class="">Administrator</a>
         </div>
       </div>
 
@@ -426,7 +441,22 @@
 <script src="{{asset("lte/plugins/jquery/jquery.min.js")}}"></script>
 <!-- Bootstrap 4 -->
 <script src="{{asset("lte/plugins/bootstrap/js/bootstrap.bundle.min.js")}}"></script>
-<!-- DataTables -->
+<!-- Select2 -->
+<script src="{{asset("lte/plugins/select2/js/select2.full.min.js")}}"></script>
+<!-- Bootstrap4 Duallistbox -->
+<script src="{{asset("lte/plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js")}}"></script>
+<!-- InputMask -->
+<script src="{{asset("lte/plugins/moment/moment.min.js")}}"></script>
+<script src="{{asset("lte/plugins/inputmask/min/jquery.inputmask.bundle.min.js")}}"></script>
+<!-- date-range-picker -->
+<script src="{{asset("lte/plugins/daterangepicker/daterangepicker.js")}}"></script>
+<!-- bootstrap color picker -->
+<script src="{{asset("lte/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js")}}"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="{{asset("lte/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js")}}"></script>
+<!-- Bootstrap Switch -->
+<script src="{{asset("lte/plugins/bootstrap-switch/js/bootstrap-switch.min.js")}}"></script>
+<!-- DataTable -->
 <script src="{{asset("lte/plugins/datatables/jquery.dataTables.min.js")}}"></script>
 <script src="{{asset("lte/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js")}}"></script>
 <script src="{{asset("lte/plugins/datatables-responsive/js/dataTables.responsive.min.js")}}"></script>
@@ -437,6 +467,7 @@
 <script src="{{asset("lte/dist/js/demo.js")}}"></script>
 <!-- page script -->
 <script>
+  var row = 1;
   $(function () {
     $("#example1").DataTable({
       "responsive": true,
@@ -444,14 +475,149 @@
     });
     $('#example2').DataTable({
       "paging": true,
-      "lengthChange": false,
-      "searching": false,
+      "lengthChange": true,
+      "searching": true,
       "ordering": true,
       "info": true,
       "autoWidth": false,
       "responsive": true,
     });
-  });
+    //Initialize Select2 Elements
+    $('.select2').select2()
+
+    //Initialize Select2 Elements
+    $('.select2bs4').select2({
+      theme: 'bootstrap4'
+    })
+
+    //Datemask dd/mm/yyyy
+    $('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' })
+    //Datemask2 mm/dd/yyyy
+    $('#datemask2').inputmask('mm/dd/yyyy', { 'placeholder': 'mm/dd/yyyy' })
+    //Money Euro
+    $('[data-mask]').inputmask()
+
+    //Date range picker
+    $('#reservationdate').datetimepicker({
+        format: 'L'
+    });
+    //Date range picker
+    $('#reservation').daterangepicker()
+    //Date range picker with time picker
+    $('#reservationtime').daterangepicker({
+      timePicker: true,
+      timePickerIncrement: 30,
+      locale: {
+        format: 'MM/DD/YYYY hh:mm A'
+      }
+    })
+    //Date range as a button
+    $('#daterange-btn').daterangepicker(
+      {
+        ranges   : {
+          'Today'       : [moment(), moment()],
+          'Yesterday'   : [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+          'Last 7 Days' : [moment().subtract(6, 'days'), moment()],
+          'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+          'This Month'  : [moment().startOf('month'), moment().endOf('month')],
+          'Last Month'  : [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+        },
+        startDate: moment().subtract(29, 'days'),
+        endDate  : moment()
+      },
+      function (start, end) {
+        $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'))
+      }
+    )
+
+    //Timepicker
+    $('#timepicker').datetimepicker({
+      format: 'LT'
+    })
+    
+    //Bootstrap Duallistbox
+    $('.duallistbox').bootstrapDualListbox()
+
+    //Colorpicker
+    $('.my-colorpicker1').colorpicker()
+    //color picker with addon
+    $('.my-colorpicker2').colorpicker()
+
+    $('.my-colorpicker2').on('colorpickerChange', function(event) {
+      $('.my-colorpicker2 .fa-square').css('color', event.color.toString());
+    });
+
+    $("input[data-bootstrap-switch]").each(function(){
+      $(this).bootstrapSwitch('state', $(this).prop('checked'));
+    });
+
+    $('#datetimepicker5').datetimepicker();
+    $("#addRow").click(function () {
+        var html = '';
+        html += '<div class="row" id="inputFormRow">';
+        html += '<div class="form-group col-3">';
+        html += '<input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter name">';
+        html += '</div>';
+        html += '<div class="form-group col-2">';
+        html += '<input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter NIK or ID Number">';
+        html += '</div>';   
+        html += '<div class="form-group col-2">';
+        html += '<input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter Phone Number">';
+        html += '</div>';
+        html += '<div class="form-group col-3">';
+        html += '<select class="form-control select2" style="width: 100%;">';
+        html += '<option selected="selected">Building Management</option>';                        
+        html += '<option>IP-Core</option>';
+        html += '<option>IT-Infrastruktur</option>';
+        html += '<option>IT-Network & Security</option>';
+        html += '<option>IT-Server</option>';
+        html += '<option>IT-Oracle</option>';                        
+        html += '</select>';
+        html += '</div>';
+        html += '<div>';
+        html += '<button id="removeRow" type="button" class="btn btn-danger">Remove</button>';                
+        html += '</div>';
+        html += '</div>';                         
+        html += '</div>';
+
+        $('#newRow').append(html);
+    });
+
+    // remove row
+    $(document).on('click', '#removeRow', function () {
+        $(this).closest('#inputFormRow').remove();
+    });
+
+    $("#addDeviceRow").click(function () {
+        var html = '';
+        html += '<div class="row" id="inputFormRow">';
+        html += '<div class="form-group col-3">';
+        html += '<input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Device Name">';
+        html += '</div>';
+        html += '<div class="form-group col-4">';
+        html += '<input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter Brand Name">';
+        html += '</div>';   
+        html += '<div class="form-group col-3">';
+        html += '<input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter Serial Number">';
+        html += '</div>';
+        html += '<div class="form-group col-1">';
+        html += '<input type="text" class="form-control" id="exampleInputPassword1" placeholder="Qty">';
+        html += '</div>';
+        html += '<div>';
+        html += '<button id="removeRow" type="button" class="btn btn-danger">Remove</button>';                
+        html += '</div>';
+        html += '</div>';                         
+        html += '</div>';
+
+        $('#newDeviceRow').append(html);
+    });
+
+    // remove row
+    $(document).on('click', '#removeRow', function () {
+        $(this).closest('#inputFormRow').remove();
+    });
+ 
+  });  
 </script>
 </body>
 </html>
