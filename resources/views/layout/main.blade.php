@@ -582,12 +582,7 @@
 
         $('#newRow').append(html);
     });
-
-    // remove row
-    $(document).on('click', '#removeRow', function () {
-        $(this).closest('#inputFormRow').remove();
-    });
-
+   
     $("#addDeviceRow").click(function () {
         var html = '';
         html += '<div class="row" id="inputFormRow">';
@@ -610,6 +605,30 @@
         html += '</div>';
 
         $('#newDeviceRow').append(html);
+    });    
+
+    $("#addRiskRow").click(function () {
+        var html = '';
+        html += '<div class="row" id="inputFormRow">';
+        html += '<div class="form-group col-3">';
+        html += '<input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Risk Name">';
+        html += '</div>';
+        html += '<div class="form-group col-2">';
+        html += '<input type="text" class="form-control" id="exampleInputPassword1" placeholder="Posibility">';
+        html += '</div>';   
+        html += '<div class="form-group col-2 ">';
+        html += '<input type="text" class="form-control" id="exampleInputPassword1" placeholder="Impact">';
+        html += '</div>';
+        html += '<div class="form-group col-4">';
+        html += '<input type="text" class="form-control" id="exampleInputPassword1" placeholder="Mitigation Plan">';
+        html += '</div>';
+        html += '<div>';
+        html += '<button id="removeRow" type="button" class="btn btn-danger">Remove</button>';                
+        html += '</div>';
+        html += '</div>';                         
+        html += '</div>';
+
+        $('#newRiskRow').append(html);
     });
 
     // remove row

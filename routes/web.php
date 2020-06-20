@@ -14,9 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('/formPermit');
+    return view('/permitRequest');
 });
 
 Route::get('/tabelUser', 'userController@index' );
-Route::get('/tabelPermit', 'permitController@index' );
+Route::get('/formPermit', 'PermitsController@create' );
 Route::get('/tabelKartu', 'kartuController@index' );
+Route::get('permits','PermitsController@index' );

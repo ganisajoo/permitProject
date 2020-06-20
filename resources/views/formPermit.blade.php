@@ -7,14 +7,22 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-12">
-        <div class="card card-primary">
+        <div class="card bg-light card-dark">
             <div class="card-header">
                 <h4 class="font-weight-bold">Internal Permit Access</h4>                           
             </div>
             <!-- /.card-header -->
             <!-- form start -->
             <form role="form">
-              <div class="card-body">                 
+              <div class="card-body">
+                <div class="card-body"><h5 class="font-weight-bold mb-4">Permit Name</h5>
+                  <div class="form-row">
+                  <div class="form-group col">
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter permit  name">
+                  </div>
+                </div>
+                </div>
+                <hr>                 
                 <div class="card-body"><h5 class="font-weight-bold mb-4">Requestor</h5>
                 <div class="form-row">
                 <div class="form-group col">
@@ -274,6 +282,18 @@
                         <textarea class="form-control" rows="3" placeholder="Enter ..."></textarea>
                     </div>
                     </div>
+                    <div class="row">
+                    <div class="form-group col">
+                      <label>Testing and Verification</label>
+                      <textarea class="form-control" rows="3" placeholder="Enter ..."></textarea>                         
+                  </div>
+              </div>
+              <div class="row">
+                <div class="form-group col">
+                  <label>Rollback Operation</label>
+                  <textarea class="form-control" rows="3" placeholder="Enter ..."></textarea>                         
+              </div>
+          </div>
                     <div class="row" id="inputFormRow">
                       <div class="form-group col-3">
                       
@@ -292,17 +312,17 @@
                                 <option>Low</option>                      
                             </select>
                             </div>
-                          <div class="form-group col">
+                          <div class="form-group col-4">
                               <label for="exampleInputEmail1">Mitigation Plan</label>
                               <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter NIK or ID Number">
-                          </div>
-                                        
-                          </div>
-                          <div id="newRow"></div>
-                          <button id="addRow" type="button" class="btn btn-info">Add</button>                         
-                  
-                  </div>     
-                <div class="form-group">
+                          </div>                                        
+                    </div>
+                          <div id="newRiskRow"></div>
+                          <button id="addRiskRow" type="button" class="btn btn-info">Add</button>                                       
+                    <hr>  
+                      
+                <div class="row">  
+                <div class="form-group mt-4 col-4">
                   <label for="exampleInputFile">File input</label>
                   <div class="input-group">
                     <div class="custom-file">
@@ -313,19 +333,18 @@
                       <span class="input-group-text" id="">Upload</span>
                     </div>
                   </div>
-                </div>
-                <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                </div>
+                  </div>
+                </div>                
               </div>
+            </div>
               <!-- /.card-body -->
 
-              <div class="card-footer">
-                <button type="submit" class="btn btn-primary">Submit</button>
+              <div class="card-footer ">
+                <button type="submit" class="btn btn-primary btn-lg ">Submit</button>
               </div>
             </form>
           </div>
+        </div>
               <!-- /.card-body -->
             </div>
             <!-- /.card -->
