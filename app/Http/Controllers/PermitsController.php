@@ -17,7 +17,6 @@ class PermitsController extends Controller
     {
          $permits = Permit::all();
          return view('permitRequest', compact('permits'));
-
       
     }
 
@@ -39,7 +38,7 @@ class PermitsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         
     }
 
     /**

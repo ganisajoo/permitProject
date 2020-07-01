@@ -1,3 +1,4 @@
+
 @extends('layout/main')
 @section('table_title', 'Tabel Permit')
 @section('content')
@@ -9,7 +10,7 @@
       <div class="col-12">
         <div class="card">
           <div class="card-header">
-            <a href="{{ url ('formPermit')}}" target="_blank">
+            <a href="{{ url ('formPermit')}}" target="">
             <button type="button" class="btn btn-primary btn-lg" >Request Permit
               </button></a>
           </div>            
@@ -19,26 +20,22 @@
         <table id="example1" class="table table-bordered table-striped">
           <thead>
             <tr>
-            <th>Rendering engine</th>
-                    <th>Browser</th>
-                    <th>Platform(s)</th>
-                    <th>Engine version</th>
-                    <th>CSS grade</th>
+              <th>id</th>
+              <th>Nama</th>
+              <th>Tanggal Request</th>             
             </tr>
             </thead>
-            <tbody>           
-              @foreach ($permit as $permit)
-                  
-              <tr>     
-                <td>{{$permit->nama</td>
-                <td></td>             
-                
-                
-              </tr>
+            <tbody>
+            <tr>
+              @foreach ($permits as $item)
+
+            <td>{{ $item->id_permit }}</td>              
+            <td>{{ $item->name }}</td>
+            <td>{{ $item->created_at }}</td>
+
               @endforeach
-            
-                  </tbody>               
-                  
+            </tr>     
+                
                 </table>
               </div>
               <!-- /.card-body -->

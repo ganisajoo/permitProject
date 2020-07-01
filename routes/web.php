@@ -1,5 +1,6 @@
 <?php
 
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,12 +13,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('/permitRequest');
-});
-
-Route::get('/tabelUser', 'userController@index' );
-Route::get('/formPermit', 'PermitsController@create' );
-Route::get('/tabelKartu', 'kartuController@index' );
-Route::get('permits','PermitsController@index' );
+Route::get('/', 'PermitsController@index');
+Route::get('permitRequest', 'PermitsController@index');
+Route::get('formPermit', 'PermitsController@create');
+Route::post('formPermit', 'PermitsController@store');

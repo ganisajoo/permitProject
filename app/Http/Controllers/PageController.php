@@ -11,9 +11,9 @@ class PageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function permit()
     {
-        //
+        return view('formPermit');
     }
 
    

@@ -16,6 +16,14 @@ class CreatePermitsTable extends Migration
         Schema::create('permits', function (Blueprint $table) {
             $table->id('id_permit');
             $table->string('name');
+            $table->string('purpose');
+            $table->string('time_range');
+            $table->string('akses');
+            $table->string('akses_type');
+            $table->string('area');
+            $table->text('procedure');
+            $table->text('testing');
+            $table->text('rollback');
             $table->timestamps();
         });
     }

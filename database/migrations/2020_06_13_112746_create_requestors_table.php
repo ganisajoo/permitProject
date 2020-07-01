@@ -20,11 +20,7 @@ class CreateRequestorsTable extends Migration
             $table->string('email')->unique();
             $table->string('department');
             $table->bigInteger('phone');
-            $table->string('purpose');
-            $table->string('time_range');
-            $table->string('akses');
-            $table->string('akses_type');
-            $table->string('area');
+            $table->foreignId('permit_id');        
             $table->timestamps();
         });
     }

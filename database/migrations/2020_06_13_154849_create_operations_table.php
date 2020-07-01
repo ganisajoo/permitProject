@@ -19,9 +19,7 @@ class CreateOperationsTable extends Migration
             $table->string('posibility');
             $table->string('impact');
             $table->string('mitigation');
-            $table->text('procedure');
-            $table->text('testing');
-            $table->text('rollback');
+            $table->foreignId('permit_id');            
             $table->timestamps();
         });
     }

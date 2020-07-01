@@ -13,12 +13,13 @@
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form role="form">
-              <div class="card-body">
-                <div class="card-body"><h5 class="font-weight-bold mb-4">Permit Name</h5>
-                  <div class="form-row">
+            <div class="card-body">
+              <div class="card-body"><h5 class="font-weight-bold mb-4">Permit Name</h5>
+                <div class="form-row">
                   <div class="form-group col">
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter permit  name">
+                    <form role="form" action="" method="POST">
+                    <input type="text" class="form-control" id="name" placeholder="Enter permit  name"
+                    name="name">
                   </div>
                 </div>
                 </div>

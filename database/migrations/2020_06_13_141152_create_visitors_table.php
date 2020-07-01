@@ -19,6 +19,7 @@ class CreateVisitorsTable extends Migration
             $table->string('nik')->unique();
             $table->bigInteger('phone');
             $table->string('department');
+            $table->foreignId('permit_id');
             $table->timestamps();
         });
     }
