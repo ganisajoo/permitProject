@@ -19,7 +19,8 @@ class CreateEquipmentsTable extends Migration
             $table->string('brand');
             $table->string('serial_number')->unique();
             $table->integer('qty');
-            $table->foreignId('permit_id');
+            $table->foreignId('permit_id')->references('id_permit')->on('permits')
+                    ->onDelete('cascade');
             $table->timestamps();
         });
     }

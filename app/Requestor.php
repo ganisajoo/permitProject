@@ -6,5 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Requestor extends Model
 {
-    //
+    protected $fillable = [
+        'name','nik','email','department','phone','permit_id'
+    ];
 }
