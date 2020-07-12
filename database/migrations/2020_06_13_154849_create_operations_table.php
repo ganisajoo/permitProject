@@ -19,8 +19,8 @@ class CreateOperationsTable extends Migration
             $table->string('posibility');
             $table->string('impact');
             $table->string('mitigation');
-            $table->foreignId('permit_id')->references('id_permit')->on('permits')
-                    ->onDelete('cascade');            
+            $table->foreign('permit_id')->references('id_permit')->on('permits');
+            $table->unsignedBigInteger('permit_id')->unsigned();      
             $table->timestamps();
         });
     }

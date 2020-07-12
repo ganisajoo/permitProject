@@ -19,8 +19,8 @@ class CreateVisitorsTable extends Migration
             $table->string('nik')->unique();
             $table->bigInteger('phone');
             $table->string('department');
-            $table->foreignId('permit_id')->references('permit_id')->on('permits')
-                    ->onDelete('cascade');
+            $table->foreign('permit_id')->references('id_permit')->on('permits');
+            $table->unsignedBigInteger('permit_id');   
             $table->timestamps();
         });
     }

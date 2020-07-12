@@ -23,7 +23,7 @@ class CreatePermitsTable extends Migration
             $table->string('area');
             $table->text('procedure');
             $table->text('testing');
-            $table->text('rollback');
+            $table->text('rollback');           
             $table->timestamps();
         });
     }

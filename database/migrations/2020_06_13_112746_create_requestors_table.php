@@ -19,9 +19,8 @@ class CreateRequestorsTable extends Migration
             $table->string('nik')->unique();
             $table->string('email')->unique();
             $table->string('department');
-            $table->bigInteger('phone');
-            $table->foreignId('permit_id')->references('id_permit')->on('permits')
-                    ->onDelete('cascade');        
+            $table->bigInteger('phone');            
+            $table->foreignId('permit_id')->constrained('permits');                           
             $table->timestamps();
         });
     }
