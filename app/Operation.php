@@ -12,6 +12,6 @@ class Operation extends Model
 
     public function permits()
     {
-        return $this->belongsTo('App/Permit');
+        return $this->belongsTo(Permit::class);
     }
 }

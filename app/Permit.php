@@ -13,21 +13,21 @@ class Permit extends Model
 
   public function requestors()
   {
-    return $this->hasMany('App/Requestor');
+    return $this->hasMany(Requestor::class);
   }
 
   public function visitors()
   {
-      return $this->hasMany('App/Visitor');
+      return $this->hasMany(Visitor::class);
   }
 
   public function equipments()
   {
-      return $this->hasMany('App/Equipment');
+      return $this->hasMany(Equipment::class);
   }
 
   public function operations()
   {
-      return $this->hasMany('App/Operation');
+      return $this->hasMany(Operation::class);
   }
 }
